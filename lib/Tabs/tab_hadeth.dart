@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../Models/item_address.dart';
 import '../Screens/hadeth_details.dart';
 import '../my_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class Tab_Hadeth extends StatelessWidget {
+class Tab_Hadeth extends StatefulWidget {
+
+  @override
+  State<Tab_Hadeth> createState() => _Tab_HadethState();
+}
+
+class _Tab_HadethState extends State<Tab_Hadeth> {
+  List<String> lines = [];
 
   List<String> Ahadeth = [
     'حديث رقم 1',
@@ -48,6 +56,7 @@ class Tab_Hadeth extends StatelessWidget {
     'حديث رقم 39',
     'حديث رقم 40',
   ];
+
   @override
   Widget build(BuildContext context) {
 
@@ -105,5 +114,15 @@ class Tab_Hadeth extends StatelessWidget {
       ],
 
     );
+  }
+
+  Future<void> loadFile(String filePath) async {                   // Soon will be called/used
+    String all_lines = await rootBundle.loadString('$filePath');
+    lines = all_lines.trim().split('#');
+    for(int i=0;i<lines.length;i++){
+      print(lines[i]);
+      print('------');
+    }
+    setState(() {});
   }
 }
