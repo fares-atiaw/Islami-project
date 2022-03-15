@@ -123,7 +123,7 @@ class _Tab_HadethState extends State<Tab_Hadeth> {
       print(lines[i]);
       print('------');
     }
+    dssfsdfsdfgsfsdfsdfsdfsdfdsfsdf
     setState(() {});
-hhywwdwd  why why shay
   }
 }
