@@ -30,10 +30,15 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations: # Add this line
+    sdk: flutter         # Add this line
+
+  intl: ^0.17.0 # Add this line
+
   provider: ^6.0.2
-#  flutter_localizations: # Add this line
-#    sdk: flutter         # Add this line
-#  intl: ^0.17.0 # Add this line
+  #  flutter_localizations: # Add this line
+  #    sdk: flutter         # Add this line
+  #  intl: ^0.17.0 # Add this line
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,10 +47,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_localizations: # Add this line
-    sdk: flutter         # Add this line
-
-  intl: ^0.17.0 # Add this line
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -72,6 +73,7 @@ flutter:
     - asset/images/
     - asset/files/
     - asset/files/ayat/
+  #    - asset/files/ahadeth.txt
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

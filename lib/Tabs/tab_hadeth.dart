@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../Models/item_address.dart';
+
+import '../Models/item_hadeth.dart';
 import '../Screens/hadeth_details.dart';
 import '../my_theme.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Tab_Hadeth extends StatefulWidget {
-
   @override
   State<Tab_Hadeth> createState() => _Tab_HadethState();
 }
 
 class _Tab_HadethState extends State<Tab_Hadeth> {
   List<String> lines = [];
+  List<String> oneHadeth = [];
+  List<ItemHadeth> items = [];
 
-  List<String> Ahadeth = [
+  /*List<String> Ahadeth = [
     'حديث رقم 1',
     'حديث رقم 2',
     'حديث رقم 3',
@@ -55,10 +56,11 @@ class _Tab_HadethState extends State<Tab_Hadeth> {
     'حديث رقم 38',
     'حديث رقم 39',
     'حديث رقم 40',
-  ];
+  ];*/
 
   @override
   Widget build(BuildContext context) {
+    if (lines.isEmpty) loadFile('asset/files/ahadeth.txt');
 
     return Column(
       children: [
@@ -77,7 +79,8 @@ class _Tab_HadethState extends State<Tab_Hadeth> {
                 height: 2,
                 color: MyTheme.c_gold,
               ),
-              Text(AppLocalizations.of(context)!.elAhadeth,
+              Text(
+                'AppLocalizations.of(context)!.elAhadeth',
                 style: Theme.of(context).textTheme.subtitle2,
                 textAlign: TextAlign.center,
               ),
@@ -89,41 +92,41 @@ class _Tab_HadethState extends State<Tab_Hadeth> {
               ),
               Expanded(
                 child: ListView.builder(
-                    itemBuilder: (
-                            (context, index) => InkWell(
-                              onTap: (() {
-                                Navigator.pushNamed(
-                                    context, HadethDetails.routeName,
-                                    arguments: ItemAddress(name: Ahadeth[index], number: index.toString()
-                                    ));
-                              }),
-                              child: Container(
-                                margin: EdgeInsets.all(5),
-                                child: Text(
-                                  Ahadeth[index],
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.subtitle2),
-                              ),
-                            )
-                    ),
-                    itemCount: Ahadeth.length,),
+                  itemBuilder: ((context, index) => InkWell(
+                        onTap: (() {
+                          Navigator.pushNamed(context, HadethDetails.routeName,
+                              arguments: items[index]);
+                        }),
+                        child: Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text(items[index].title,
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.subtitle2),
+                        ),
+                      )),
+                  itemCount: lines.length,
+                ),
               ),
             ],
           ),
         )
       ],
-
     );
   }
 
-  Future<void> loadFile(String filePath) async {                   // Soon will be called/used
-    String all_lines = await rootBundle.loadString('$filePath');
-    lines = all_lines.trim().split('#');
-    for(int i=0;i<lines.length;i++){
-      print(lines[i]);
+  Future<void> loadFile(String filePath) async {
+    // Soon will be called/used
+    String fileContent = await rootBundle.loadString('$filePath');
+    lines = fileContent.trim().split('#');
+    for (int i = 0; i < lines.length; i++) {
+      String hadeth = lines[i].trim();
+      List<String> singleHadethLines = hadeth.split('\n');
+      String title = singleHadethLines[0];
+      singleHadethLines.removeAt(0);
+      items.add(ItemHadeth(title: title, content: singleHadethLines));
+      print(items[i].title);
       print('------');
     }
     setState(() {});
-hhywwdwd  why why shay
   }
 }

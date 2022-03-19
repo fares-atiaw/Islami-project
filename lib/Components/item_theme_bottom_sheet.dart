@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:islami_app/my_theme.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../Provider/app_provider.dart';
 
 class ItemBS_Theme extends StatefulWidget {
-
   @override
   State<ItemBS_Theme> createState() => _ItemBS_ThemeState();
 }
 
 class _ItemBS_ThemeState extends State<ItemBS_Theme> {
-
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<AppProvider>(context);
@@ -23,15 +21,17 @@ class _ItemBS_ThemeState extends State<ItemBS_Theme> {
         //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           InkWell(
-            child: getThemeRow(AppLocalizations.of(context)!.light, provider.themeMode==ThemeMode.light),
-            onTap: (){
+            child: getThemeRow('AppLocalizations.of(context)!.light',
+                provider.themeMode == ThemeMode.light),
+            onTap: () {
               Navigator.pop(context);
               provider.changeThemeMode(mode: ThemeMode.light);
             },
           ),
           InkWell(
-            child: getThemeRow(AppLocalizations.of(context)!.dark, provider.themeMode==ThemeMode.dark),
-            onTap: (){
+            child: getThemeRow('AppLocalizations.of(context)!.dark',
+                provider.themeMode == ThemeMode.dark),
+            onTap: () {
               Navigator.pop(context);
               provider.changeThemeMode(mode: ThemeMode.dark);
             },

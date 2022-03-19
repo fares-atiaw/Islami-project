@@ -1,7 +1,7 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
-import '../my_theme.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Tab_Sebha extends StatefulWidget {
   @override
@@ -54,9 +54,11 @@ class _Tab_SebhaState extends State<Tab_Sebha> {
           Container(
             child: Center(
               child: Text(
-                AppLocalizations.of(context)!.num_sebha,
-                style:
-                Theme.of(context).textTheme.subtitle2?.copyWith(fontWeight: FontWeight.w500),
+                'AppLocalizations.of(context)!.num_sebha',
+                style: Theme.of(context)
+                    .textTheme
+                    .subtitle2
+                    ?.copyWith(fontWeight: FontWeight.w500),
               ),
             ),
           ),

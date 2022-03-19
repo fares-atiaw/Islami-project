@@ -22,10 +22,6 @@ class MyTheme {
         color: c_gold,
       ),
     ),
-    iconTheme: IconThemeData(
-      size: 90,
-    ),
-
     textTheme: const TextTheme(
       subtitle1: TextStyle(
         color: c_title,
@@ -41,28 +37,31 @@ class MyTheme {
         color: c_title,
         fontSize: 20,
       ),
-      headline6: TextStyle(   //for long String
-        color: c_title,
-        fontSize: 20,
+        headline6: TextStyle(
+          //for long String
+          color: c_title,
+          fontSize: 20,
+        ),
       ),
-    ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      elevation: 0,
-      selectedItemColor: Colors.black,
-      unselectedItemColor: Colors.white,
-    ),
-    colorScheme: ColorScheme(
-      primary: c_gold,
-        onPrimary:Colors.white ,
-        secondary: c_gold,
-        onSecondary:c_gold ,
-        brightness: Brightness.light,
-        background:Colors.white ,
-        error: Colors.red,
-        onBackground:Colors.white ,
-        onError:Colors.white ,
-        surface:Colors.white ,
-        onSurface:Colors.white
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        elevation: 0,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
+      ),
+      bottomSheetTheme:
+          const BottomSheetThemeData(backgroundColor: Colors.white),
+      colorScheme: const ColorScheme(
+          primary: c_gold,
+          onPrimary: Colors.white,
+          secondary: c_gold,
+          onSecondary: c_gold,
+          brightness: Brightness.light,
+          background: Colors.white,
+          error: Colors.red,
+          onBackground: Colors.white,
+          onError: Colors.white,
+          surface: Colors.white,
+          onSurface:Colors.white
     )
   );
 
@@ -98,28 +97,29 @@ class MyTheme {
         color: Colors.white,
         fontSize: 20,
       ),
-      headline6: TextStyle(     //for long String
-        color: c_darkGold,
-        fontSize: 20,
+        headline6: TextStyle(
+          //for long String
+          color: c_darkGold,
+          fontSize: 20,
+        ),
       ),
-    ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      elevation: 0,
-      selectedItemColor: c_darkGold,
-      unselectedItemColor: Colors.white,
-    ),
-      colorScheme: ColorScheme(
-          primary:c_darkGold,
-          onPrimary:Colors.white ,
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        elevation: 0,
+        selectedItemColor: c_darkGold,
+        unselectedItemColor: Colors.white,
+      ),
+      bottomSheetTheme:
+          const BottomSheetThemeData(backgroundColor: Colors.white),
+      colorScheme: const ColorScheme(
+          primary: c_darkGold,
+          onPrimary: Colors.white,
           secondary: c_gold,
-          onSecondary:c_gold ,
+          onSecondary: c_gold,
           brightness: Brightness.light,
-          background:Colors.white ,
+          background: Colors.white,
           error: Colors.red,
-          onBackground:Colors.white ,
-          onError:Colors.white ,
-          surface:Colors.white ,
-          onSurface:Colors.white
-      )
-  );
+          onBackground: Colors.white,
+          onError: Colors.white,
+          surface: Colors.white,
+          onSurface: Colors.white));
 }
