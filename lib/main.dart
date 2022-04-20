@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/Provider/app_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -6,7 +7,6 @@ import 'Screens/hadeth_details.dart';
 import 'Screens/home.dart';
 import 'Screens/sura_details.dart';
 import 'my_theme.dart';
-//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Error مسافة الجدول
 // Error عدد الآيات الل في الجدول
@@ -28,9 +28,10 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'إسلامي',
+      //AppLocalizations.of(context)!.islami  OR  'إسلامي'
 
-      // localizationsDelegates: AppLocalizations.localizationsDelegates,
-      // supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(provider.county_code),
 
       routes: {

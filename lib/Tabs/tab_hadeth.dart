@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../Models/item_hadeth.dart';
 import '../Screens/hadeth_details.dart';
@@ -80,7 +81,7 @@ class _Tab_HadethState extends State<Tab_Hadeth> {
                 color: MyTheme.c_gold,
               ),
               Text(
-                'AppLocalizations.of(context)!.elAhadeth',
+                AppLocalizations.of(context)!.elAhadeth,
                 style: Theme.of(context).textTheme.subtitle2,
                 textAlign: TextAlign.center,
               ),
@@ -115,7 +116,6 @@ class _Tab_HadethState extends State<Tab_Hadeth> {
   }
 
   Future<void> loadFile(String filePath) async {
-    // Soon will be called/used
     String fileContent = await rootBundle.loadString('$filePath');
     lines = fileContent.trim().split('#');
     for (int i = 0; i < lines.length; i++) {

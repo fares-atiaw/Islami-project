@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/Models/item_hadeth.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +31,7 @@ class _HadethDetailsState extends State<HadethDetails> {
         backgroundColor: Colors.transparent,
           appBar: AppBar(
           backgroundColor: Color(0x4D6D2A02),
-          title: Text('AppLocalizations.of(context)!.elAhadeth',
+            title: Text(AppLocalizations.of(context)!.elAhadeth,
               style: Theme.of(context).textTheme.subtitle2),
         ),
         body: Container(

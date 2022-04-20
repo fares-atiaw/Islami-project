@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/my_theme.dart';
 import 'package:provider/provider.dart';
 
-//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../Provider/app_provider.dart';
 
 class ItemBS_Theme extends StatefulWidget {
@@ -21,7 +21,7 @@ class _ItemBS_ThemeState extends State<ItemBS_Theme> {
         //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           InkWell(
-            child: getThemeRow('AppLocalizations.of(context)!.light',
+            child: getThemeRow(AppLocalizations.of(context)!.light,
                 provider.themeMode == ThemeMode.light),
             onTap: () {
               Navigator.pop(context);
@@ -29,7 +29,7 @@ class _ItemBS_ThemeState extends State<ItemBS_Theme> {
             },
           ),
           InkWell(
-            child: getThemeRow('AppLocalizations.of(context)!.dark',
+            child: getThemeRow(AppLocalizations.of(context)!.dark,
                 provider.themeMode == ThemeMode.dark),
             onTap: () {
               Navigator.pop(context);

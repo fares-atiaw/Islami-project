@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/my_theme.dart';
 import 'package:provider/provider.dart';
 
 import '../Components/item_language_bottom_sheet.dart';
-//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../Components/item_theme_bottom_sheet.dart';
 import '../Provider/app_provider.dart';
 
@@ -24,7 +24,7 @@ class _Tab_SettingsState extends State<Tab_Settings> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text('AppLocalizations.of(context)!.languages',
+          Text(AppLocalizations.of(context)!.languages,
               style: Theme.of(context).textTheme.headline3),
           InkWell(
             onTap: (() {
@@ -49,7 +49,7 @@ class _Tab_SettingsState extends State<Tab_Settings> {
           const SizedBox(
             height: 15,
           ),
-          Text('AppLocalizations.of(context)!.theme',
+          Text(AppLocalizations.of(context)!.theme,
               style: Theme.of(context).textTheme.headline3),
           InkWell(
             onTap: (() {
@@ -65,8 +65,8 @@ class _Tab_SettingsState extends State<Tab_Settings> {
                 ),
                 child: Text(
                   provider.themeMode == ThemeMode.light
-                      ? 'AppLocalizations.of(context)!.light'
-                      : 'AppLocalizations.of(context)!.dark',
+                      ? AppLocalizations.of(context)!.light
+                      : AppLocalizations.of(context)!.dark,
                   style: Theme.of(context)
                       .textTheme
                       .headline3
