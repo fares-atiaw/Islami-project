@@ -4,10 +4,15 @@ class Tab_Radio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green,
-      width: double.infinity,
-      height: double.infinity,
-      child: Column(),
+      child: Column(
+        children: [
+          Image.asset('asset/images/radio.png'),
+          ListView.builder(
+            itemBuilder: (context, index) => Text('gg'),
+            itemCount: 5,
+          )
+        ],
+      ),
     );
   }
 }

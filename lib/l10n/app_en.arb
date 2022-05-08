@@ -10,5 +10,7 @@
   "elAhadeth": "ElAhadeth",
   "theme": "Theme",
   "light": "Light",
-  "dark": "Dark"
+  "dark": "Dark",
+  "suraName": "Sura Name",
+  "suraNumber": "Sura Number"
 }

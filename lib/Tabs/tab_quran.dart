@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../Components/item_2_titles.dart';
 import '../Models/item_address.dart';
@@ -133,8 +134,8 @@ class Tab_Quran extends StatelessWidget {
             )),
         Item_2_titles(
           address: ItemAddress(
-            name: "اسم السورة",
-            number: "عدد الآيات",
+            name: AppLocalizations.of(context)!.suraName,
+            number: AppLocalizations.of(context)!.suraNumber,
           ),
           up_down_divider: true,
         ),
