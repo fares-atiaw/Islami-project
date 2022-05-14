@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
 
 import '../Provider/app_provider.dart';
@@ -28,15 +29,25 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    initialization();
+  }
+
+  void initialization() async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    // print('go!');
+    FlutterNativeSplash.remove();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var provider = Provider.of<AppProvider>(context);
 
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(
-                provider.getAppropriateBackground()
-              ),
+              image: AssetImage(provider.getAppropriateBackground()),
               fit: BoxFit.fill)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -52,9 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage('asset/icons/quran.png'),
-              ),
+              icon: ImageIcon(AssetImage('asset/icons/quran.png')),
               //size: Theme.of(context).iconTheme.size
               label: AppLocalizations.of(context)!.quran,
             ),

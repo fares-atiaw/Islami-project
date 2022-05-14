@@ -93,6 +93,8 @@ class _Tab_HadethState extends State<Tab_Hadeth> {
               ),
               Expanded(
                 child: ListView.builder(
+                  // scrollDirection: Axis.vertical,
+                  // shrinkWrap: true,
                   itemBuilder: ((context, index) => InkWell(
                         onTap: (() {
                           Navigator.pushNamed(context, HadethDetails.routeName,

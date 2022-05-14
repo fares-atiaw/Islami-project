@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:islami_app/Provider/app_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -8,16 +9,14 @@ import 'Screens/home.dart';
 import 'Screens/sura_details.dart';
 import 'my_theme.dart';
 
-// Error مسافة الجدول
-// Error عدد الآيات الل في الجدول
 // scaffoldBackgroundColor: Colors.transparent, doesn't work in theme
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   runApp(ChangeNotifierProvider(
-      create: (context) => AppProvider(),
-      child: MyApp()
-      )
-  );
+      create: (context) => AppProvider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
