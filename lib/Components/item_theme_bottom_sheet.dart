@@ -16,7 +16,7 @@ class _ItemBS_ThemeState extends State<ItemBS_Theme> {
     var provider = Provider.of<AppProvider>(context);
 
     return Container(
-      color: Color(0xffb1d998),
+      //color: Color(0xffb1d998),
       child: Column(
         //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -51,7 +51,11 @@ class _ItemBS_ThemeState extends State<ItemBS_Theme> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(text,
-                style: MyTheme.lightTheme.textTheme.headline3?.copyWith(color: MyTheme.c_gold),
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .headline3
+                    ?.copyWith(color: MyTheme.c_gold),
               ),
               Icon(Icons.check_circle_outline_rounded, color: MyTheme.c_gold),
             ],
@@ -65,7 +69,10 @@ class _ItemBS_ThemeState extends State<ItemBS_Theme> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(text,
-              style: MyTheme.lightTheme.textTheme.headline3,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headline3,
             ),
             Icon(Icons.check_circle_outline_rounded),
           ],

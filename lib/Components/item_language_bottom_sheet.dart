@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:islami_app/my_theme.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +17,7 @@ class _ItemBS_LanguageState extends State<ItemBS_Language> {
     var languageProvider = Provider.of<AppProvider>(context);
 
     return Container(
-      color: Color(0xffb1d998),
+      //color: Color(0xffb1d998),
       child: Column(
         //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

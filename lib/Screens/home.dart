@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void initialization() async {
     await Future.delayed(const Duration(milliseconds: 500));
-    // print('go!');
+    print('go!');
     FlutterNativeSplash.remove();
   }
 

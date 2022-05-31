@@ -36,7 +36,7 @@ class MyTheme {
         color: c_title,
         fontSize: 20,
       ),
-        headline6: TextStyle(
+      headline6: TextStyle(
           //for long String
           color: c_title,
           fontSize: 20,
@@ -93,10 +93,10 @@ class MyTheme {
         fontWeight: FontWeight.bold,
       ),
       headline3: TextStyle(
-        color: Colors.white,
-        fontSize: 20,
-      ),
-        headline6: TextStyle(
+        color: c_title,
+          fontSize: 20,
+        ),
+      headline6: TextStyle(
           //for long String
           color: c_darkGold,
           fontSize: 20,

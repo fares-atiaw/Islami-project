@@ -25,32 +25,32 @@ class _Tab_SettingsState extends State<Tab_Settings> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(AppLocalizations.of(context)!.languages,
-              style: Theme.of(context).textTheme.headline3),
+              style: Theme.of(context).textTheme.headline6),
           InkWell(
             onTap: (() {
               showLanguagesBottomSheet();
             }),
             child: Container(
-              margin: const EdgeInsets.symmetric(vertical: 10),
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-                color: Colors.white,
-                border: Border.all(color: Theme.of(context).primaryColor),
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  color: Colors.white,
+                  border: Border.all(color: Theme.of(context).primaryColor),
               ),
                 child: Text(
-                  provider.county_code=="en"
-                  ?"English"
-                  :"العربية",
-                  style: Theme.of(context).textTheme.headline3?.copyWith(color: MyTheme.c_title),
-                )
-            ),
+                  provider.county_code=="en" ? "English" : "العربية",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline3
+                      ?.copyWith(color: MyTheme.c_title),
+                )),
           ),
           const SizedBox(
             height: 15,
           ),
           Text(AppLocalizations.of(context)!.theme,
-              style: Theme.of(context).textTheme.headline3),
+              style: Theme.of(context).textTheme.headline6),
           InkWell(
             onTap: (() {
               showThemeBottomSheet();
