@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:islami_app/Provider/app_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Screens/hadeth_details.dart';
 import 'Screens/home.dart';
@@ -20,10 +21,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  late AppProvider provider;
+  late SharedPreferences prefs;
+  late var modeType;
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<AppProvider>(context);
+    provider = Provider.of<AppProvider>(context);
+    init_SharedPreferences();
 
     return MaterialApp(
       title: 'إسلامي',
@@ -46,6 +51,19 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
     );
+  }
+
+  void init_SharedPreferences() async {
+    prefs = await SharedPreferences.getInstance();
+
+    modeType = prefs.getString('themeString') ?? 'light';
+    (modeType == 'light')
+        ? modeType = ThemeMode.light
+        : modeType = ThemeMode.dark;
+    provider.changeThemeMode(mode: modeType);
+
+    modeType = prefs.getString('county_code') ?? 'en';
+    provider.changeLanguage(language: modeType);
   }
 }
 

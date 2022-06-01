@@ -40,26 +40,28 @@ class _HadethDetailsState extends State<HadethDetails> {
               borderRadius: BorderRadius.all(Radius.circular(15)),
             ),
             margin: EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-            child: Column(
-              children: [
-                Text(
-                  // args.name,
-                  args.title,
-                  style: Theme.of(context).textTheme.headline6,
-                  textAlign: TextAlign.center,
-                ),
-                Divider(
-                  height: 1,
-                  color: Theme.of(context).primaryColor,
-                ),
-                Text(
-                  //lines[int.parse(args.number)].trim(),
-                  args.content.join(),
-                  style: Theme.of(context).textTheme.headline6,
-                  textAlign: TextAlign.start,
-                  textDirection: TextDirection.rtl,
-                ),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text(
+                    // args.name,
+                    args.title,
+                    style: Theme.of(context).textTheme.headline6,
+                    textAlign: TextAlign.center,
+                  ),
+                  Divider(
+                    height: 1,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  Text(
+                    //lines[int.parse(args.number)].trim(),
+                    args.content.join(),
+                    style: Theme.of(context).textTheme.headline6,
+                    textAlign: TextAlign.start,
+                    textDirection: TextDirection.rtl,
+                  ),
+                ],
+              ),
             )),
       ),
     );
